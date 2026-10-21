@@ -1,27 +1,19 @@
-pymodaq_plugins_template
-########################
+pymodaq_plugins_optosky
+#######################
 
-.. the following must be adapted to your developed package, links to pypi, github  description...
+PyMoDAQ plugin for Optosky HP2000 spectrometers (Windows only, through the vendor .NET library and pythonnet).
 
-.. image:: https://img.shields.io/pypi/v/pymodaq_plugins_template.svg
-   :target: https://pypi.org/project/pymodaq_plugins_template/
-   :alt: Latest Version
+Instruments
+===========
 
-.. image:: https://readthedocs.org/projects/pymodaq/badge/?version=latest
-   :target: https://pymodaq.readthedocs.io/en/stable/?badge=latest
-   :alt: Documentation Status
+* ``DAQ_1DViewer_Optosky``: spectrum versus wavelength (nm). Settings: serial number, exposure (ms), hardware
+  averaging, smoothing, dark subtraction, non linearity correction, calibration.
 
-.. image:: https://github.com/PyMoDAQ/pymodaq_plugins_template/workflows/Upload%20Python%20Package/badge.svg
-   :target: https://github.com/PyMoDAQ/pymodaq_plugins_template
-   :alt: Publication Status
+The vendor DLLs (``HP2000_wrapper.dll``, ``Driver.dll``, ``sp.dll``, ``libusb0.dll``) must be placed in
+``src/pymodaq_plugins_optosky/hardware/optosky_dlls`` or in the folder given by the ``DLL folder`` setting.
+Spectrometers are discovered by serial number: add yours to ``DEVICES`` in ``hardware/optosky_wrapper.py``.
 
-.. image:: https://github.com/PyMoDAQ/pymodaq_plugins_template/actions/workflows/Test.yml/badge.svg
-    :target: https://github.com/PyMoDAQ/pymodaq_plugins_template/actions/workflows/Test.yml
-
-
-Use this template to create a repository on your account and start the development of your own PyMoDAQ plugin!
-
-This branch targets **PyMoDAQ 5.3.x** (Python 3.10 to 3.13). Use the branch matching your PyMoDAQ version.
+Tested with an ATP2400 spectrometer on windows 11, pymodaq 5.3.
 
 Development
 ===========
@@ -36,8 +28,7 @@ Development
 Authors
 =======
 
-* First Author  (myemail@xxx.org)
-* Other author (myotheremail@xxx.org)
+* Matthieu Guer (m.guer@hw.ac.uk)
 
 .. if needed use this field
 
